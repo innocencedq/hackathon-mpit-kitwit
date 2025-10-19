@@ -22,7 +22,7 @@ P2P сервис аренды вещей, инструментов и обору
 
 1. **Клонируйте репозиторий**
 ```
-git clone https://github.com/innocencedq/hackathon-mpit-kitwit
+git clone https://github.com/innocencedq/hackathon-mpit-kitwit.git
 cd kitwiz
 ```
 
