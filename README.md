@@ -1,2 +1,1 @@
-# kitwiz
-P2P service for the exchange of tools or professional equipment
+# Hackathon MPIT 25/26 | KitWit | chatgptdestroyers.io
