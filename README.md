@@ -4,9 +4,9 @@ P2P сервис аренды вещей, инструментов и обору
 
 ##  2. Технологии
 
-- **Backend**: Python, TortoiseORM, PostgreSQL, aiogram
+- **Backend**: Python, TortoiseORM, PostgreSQL
 - **Frontend**: TypeScript, Vite + React, TailwindCSS, Radix UI
-- **Telegram**: Telegram Apps SDK
+- **Telegram**: Telegram Apps SDK, aiogram
 
 ## 3. Быстрый старт
 
@@ -24,30 +24,37 @@ P2P сервис аренды вещей, инструментов и обору
 ```
 git clone https://github.com/yourusername/kitwiz.git
 cd kitwiz
+```
 
-# Создайте и отредактируйте .env файл в src/back:
+2. **Создайте и отредактируйте .env файл в src/back**:
+```
 BOT_TOKEN=yourbottoken
 DB_URL=asyncpg://admin:password@localhost:5432/yourbase
-
-# Установите зависимости
+```
+3. **Установите зависимости**
+```
 curl -sSL https://install.python-poetry.org | python3 -
 
 cd src/back
 poetry install
-
-# Создайте и отредактируйте .env файл в src/front:
+```
+4. **Создайте и отредактируйте .env файл в src/front**
+```
 VITE_BASE_API_URL=https://back.end
-
-# Установите зависимости
+```
+5. **Установите зависимости**
+```
 cd src/front
 npm install
-
-# Настройте базу данных
+```
+6. **Настройте базу данных**
+```
 cd src/back
 poetry run aerich init -t config_reader.TORTOISE_ORM --location ./db/migrations
 poetry run aerich init-db
-
-#Запустите приложение вместе с туннелированием
+```
+7. **Запустите приложение вместе с туннелированием**
+```
 # Frontend
 cd src/frontend
 npm run dev
