@@ -1,4 +1,4 @@
-# Hackathon MPIT 25/26 | KitWit | chatgptdestroyers.io
+# Hackathon MPIT 25/26 | KitWiz | chatgptdestroyers.io
 # 1. KitWiz - P2P сервис аренды вещей
 P2P сервис аренды вещей, инструментов и оборудования.
 
@@ -28,6 +28,7 @@ cd kitwiz
 
 2. **Создайте и отредактируйте .env файл в src/back**:
 ```
+# Создайте бота через BotFather в телеграмме, после скопируйте токен
 BOT_TOKEN=yourbottoken
 DB_URL=asyncpg://admin:password@localhost:5432/yourbase
 ```
@@ -47,13 +48,32 @@ VITE_BASE_API_URL=https://back.end
 cd src/front
 npm install
 ```
-6. **Настройте базу данных**
+6. **Запустите туннелирование двух портов**
+```
+# Пример на ngrok
+
+ngrok http 8080 --region=eu
+ngrok http 5173 --region=eu # Зависит от ваших портов
+
+# При ошибке
+npm i kill-port
+npx kill-port 8080
+npx kill-port 5173
+
+```
+6. **Настройте конфигурацию Backend'a**
+```
+# Укажите адресы полученные с прошлого шага.
+WEBHOOK_URL: str = "https://back.end"
+WEBAPP_URL: str = "https://front.end"
+```
+7. **Настройте базу данных**
 ```
 cd src/back
 poetry run aerich init -t config_reader.TORTOISE_ORM --location ./db/migrations
 poetry run aerich init-db
 ```
-7. **Запустите приложение вместе с туннелированием**
+8. **Запустите приложение**
 ```
 # Frontend
 cd src/frontend
